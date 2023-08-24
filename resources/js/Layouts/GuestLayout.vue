@@ -6,9 +6,7 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <div>
-            <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
-            </Link>
+            <h1 class="text-lg font-semibold leading-7 text-gray-600">Streamy</h1>
         </div>
 
         <div
