@@ -19,6 +19,7 @@ class Donation extends Model
         'amount',
         'currency',
         'donation_message',
+        'donator_type',
         'donator_id',
         'user_id'
     ];

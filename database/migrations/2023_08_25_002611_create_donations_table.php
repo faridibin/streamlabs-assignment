@@ -17,6 +17,7 @@ return new class extends Migration
             $table->enum('currency', ['USD'])->default('USD'); // <-- For now only USD is supported. More currencies can be added later.
             $table->longText('donation_message')->nullable();
             $table->enum('donator_type', ['follower', 'subscriber']); // <-- I added this column because I want to know who donated. Could be a follower or subscriber.
+            $table->boolean('is_read')->default(false);
             $table->unsignedBigInteger('donator_id')->nullable(); // <-- I added this column because I want to know who donated. Could be a follower or subscriber.
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();

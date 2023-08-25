@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->enum('subscription_tier', ['Tier1', 'Tier2', 'Tier3']);
+            $table->boolean('is_read')->default(false);
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
