@@ -3,6 +3,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
@@ -18,6 +19,8 @@ const submit = () => {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
+
+const redirect = () => window.location.href = route('socialite.redirect', {'provider':'google'})
 </script>
 
 <template>
@@ -97,6 +100,21 @@ const submit = () => {
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </PrimaryButton>
+            </div>
+
+            <div class="mt-5">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div class="w-full border-t border-gray-200" />
+                    </div>
+                    <div class="relative flex justify-center text-sm font-medium leading-6">
+                        <span class="bg-white px-6 text-gray-900">Or continue with</span>
+                    </div>
+                </div>
+
+                <SecondaryButton class="!block !w-full mt-3" @click="redirect">
+                    Google
+                </SecondaryButton>
             </div>
         </form>
     </GuestLayout>
