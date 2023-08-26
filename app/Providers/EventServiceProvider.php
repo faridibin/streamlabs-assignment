@@ -24,6 +24,10 @@ class EventServiceProvider extends ServiceProvider
         Eventable::class => [
             EventableListener::class,
         ],
+
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            \SocialiteProviders\Google\GoogleExtendSocialite::class . '@handle',
+        ],
     ];
 
     /**
