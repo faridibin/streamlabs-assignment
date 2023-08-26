@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\SubscriptionTier;
+use App\Events\Eventable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,12 +23,12 @@ class Subscriber extends Model
     ];
 
     /**
-     * The attributes that should be cast.
+     * The event map for the model.
      *
      * @var array
      */
-    protected $casts = [
-        'subscription_tier' => SubscriptionTier::class,
+    protected $dispatchesEvents = [
+        'created' => Eventable::class,
     ];
 
     /**

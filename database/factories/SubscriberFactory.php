@@ -19,9 +19,9 @@ class SubscriberFactory extends Factory
         return [
             'name' => $this->faker->name,
             'subscription_tier' => $this->faker->randomElement([
-                'tier1',
-                'tier2',
-                'tier3',
+                'Tier1',
+                'Tier2',
+                'Tier3',
             ]),
             'user_id' => \App\Models\User::factory(),
             'created_at' => $this->faker->dateTimeBetween('-3 months', 'now'),

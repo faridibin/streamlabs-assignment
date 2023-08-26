@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->text('message');
             $table->enum('eventable_type', ['subscription', 'follower', 'donation', 'sale']);
-            $table->json('details');
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('eventable_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             $table->index(['eventable_id', 'eventable_type']);

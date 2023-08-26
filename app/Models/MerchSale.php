@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\Eventable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,6 +24,15 @@ class MerchSale extends Model
         'buyer_type',
         'buyer_id',
         'user_id',
+    ];
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => Eventable::class,
     ];
 
     /**
