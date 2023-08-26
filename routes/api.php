@@ -21,6 +21,6 @@ Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('lo
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', fn (Request $request) => $request->user());
-    Route::get('/statistics', StatisticsController::class);
-    Route::get('/events', EventController::class);
+    Route::get('/statistics', StatisticsController::class)->name('statistics.index');
+    Route::get('/events', EventController::class)->name('events.index');
 });
