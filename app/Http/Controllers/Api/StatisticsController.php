@@ -55,7 +55,7 @@ class StatisticsController extends Controller
             ->toArray();
 
         return response()->json([
-            'followers' => $followers,
+            'followers' => number_format($followers),
             'total_revenue' => number_format($totalRevenue, 2) . ' USD',
             'top_items' => $topItems,
         ]);
